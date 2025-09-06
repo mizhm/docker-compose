@@ -8,7 +8,7 @@ services:
       - "6379:6379"
     volumes:
       - redis_data:/var/lib/redis/data
-    restart: no
+    restart: unless-stopped
 
 volumes:
   redis_data:
