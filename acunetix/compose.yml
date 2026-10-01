@@ -1,0 +1,18 @@
+services:
+  docker-awvs:
+    container_name: docker-awvs
+    platform: linux/amd64
+    image: mrvib3rxyz/awvs:latest
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+    cap_add:
+      - LINUX_IMMUTABLE
+    ports:
+      - "13443:3443"
+    volumes:
+      - awvs-data:/home/acunetix/.acunetix
+    restart: no
+
+
+volumes:
+  awvs-data:
